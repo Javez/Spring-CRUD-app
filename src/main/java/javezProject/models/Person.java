@@ -9,14 +9,15 @@ import javax.validation.constraints.Size;
 public class Person {
     private int id;
 
-    @NotEmpty(message = "Empty name error")
-    @Size(min = 2, max = 30, message = "name between 2 and 30 symbols")
+    @NotEmpty(message = "Name should not be empty")
+    @Size(min = 2, max = 30, message = "Name should be between 2 and 30 characters")
     private String name;
-    @NotEmpty(message = "Empty age error")
-    @Min(value=0, message = "age cant be negative number")
+
+    @Min(value = 0, message = "Age should be greater than 0")
     private int age;
-    @NotEmpty(message = "Email empty error")
-    @Email(message = "Not valid email")
+
+    @NotEmpty(message = "Email should not be empty")
+    @Email(message = "Email should be valid")
     private String email;
 
     public Person() {
